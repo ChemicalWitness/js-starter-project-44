@@ -2,7 +2,6 @@ import askName from '../src/cli.js';
 import { getRandomNum, getAnswer, getQuestion, compareResult } from '../src/index.js';
 
 const name = askName();
-const num = getRandomNum();
 const isEven = (number) => {
   if (number % 2 === 0) {
     return 'yes';
@@ -12,8 +11,8 @@ const isEven = (number) => {
 
 const checkEvenNumber = () => {
   getQuestion('evenGame');
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
+    const num = getRandomNum();
     const answer = getAnswer(num, 'evenGame');
     const result = isEven(num);
     if (compareResult(answer, result, name) === false) {
