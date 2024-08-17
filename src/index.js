@@ -28,8 +28,10 @@ export const getAnswer = (num, type, ...arg) => {
 
 export const compareResult = (answer, result, name) => {
   if (answer === result) {
-    return console.log('Correct!');
+    console.log('Correct!');
+    return true;
   }
   console.log(`${answer} is wrong answer ;(. Correct answer was ${result}`);
-  return console.log(`Let's try again, ${name}!`);
+  console.log(`Let's try again, ${name}!`);
+  return false;
 };

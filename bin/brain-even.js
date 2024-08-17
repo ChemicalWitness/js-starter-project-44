@@ -16,7 +16,9 @@ const checkEvenNumber = () => {
   for (let i = 0; i < 3; i += 1) {
     const answer = getAnswer(num, 'evenGame');
     const result = isEven(num);
-    compareResult(answer, result, name);
+    if (compareResult(answer, result, name) === false) {
+      return null;
+    }
   }
   return console.log(`Congratulations, ${name}!`);
 };

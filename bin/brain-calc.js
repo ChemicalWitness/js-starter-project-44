@@ -30,7 +30,9 @@ const calc = () => {
     const sign = getRandomSign();
     const answer = +getAnswer(num, 'calcGame', sign, num2);
     const result = +checkResult(num, num2, sign);
-    compareResult(answer, result, name);
+    if (compareResult(answer, result, name) === false) {
+      return null;
+    }
   }
   return console.log(`Congratulations, ${name}!`);
 };
