@@ -1,12 +1,7 @@
-import readlineSync from 'readline-sync';
 import askName from '../src/cli.js';
+import { getAnswer, getQuestion, getRandomNum, compareResult } from '../src/index.js';
 // import name from './brain-games.js';
 const name = askName();
-let num = 0;
-const getRandomNum = () => {
-  num = Math.floor(Math.random() * 100);
-  return num;
-};
 
 const getRandomSign = () => {
   const arrSign = ['+', '-', '*'];
@@ -28,21 +23,18 @@ const checkResult = (num1, num2, sign) => {
 };
 
 const calc = () => {
-  console.log('What is the result of the expression?');
+  getQuestion('calcGame');
   for (let i = 0; i < 3; i += 1) {
-    const num1 = getRandomNum();
+    const num = getRandomNum();
     const num2 = getRandomNum();
     const sign = getRandomSign();
-    const answer = readlineSync.question(`Question: ${num1} ${sign} ${num2} `);
-    console.log(`Your answer: ${answer}`);
-    if (+checkResult(num1, num2, sign) === +answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${checkResult(num1, num2, sign)}`);
-      return console.log(`Let's try again, ${name}!`);
-    }
+    const answer = +getAnswer(num, 'calcGame', sign, num2);
+    const result = +checkResult(num, num2, sign);
+    compareResult(answer, result, name);
   }
   return console.log(`Congratulations, ${name}!`);
 };
+
+calc();
 
 export default calc;

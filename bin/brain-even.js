@@ -1,12 +1,8 @@
-import readlineSync from 'readline-sync';
 import askName from '../src/cli.js';
-// import name from './brain-games.js';
+import { getRandomNum, getAnswer, getQuestion, compareResult } from '../src/index.js';
+
 const name = askName();
-let num = 0;
-const getRandomNum = () => {
-  num = Math.floor(Math.random() * 100);
-  return num;
-};
+const num = getRandomNum();
 const isEven = (number) => {
   if (number % 2 === 0) {
     return 'yes';
@@ -15,18 +11,16 @@ const isEven = (number) => {
 };
 
 const checkEvenNumber = () => {
+  getQuestion('evenGame');
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 0; i < 3; i++) {
-    getRandomNum();
-    const answer = readlineSync.question(`Question: ${num} `);
-    console.log(`Your answer: ${answer}`);
-    if (answer === isEven(num)) {
-      console.log('Correct!');
-    } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${isEven(num)}.`);
-    }
+  for (let i = 0; i < 3; i += 1) {
+    const answer = getAnswer(num, 'evenGame');
+    const result = isEven(num);
+    compareResult(answer, result, name);
   }
   return console.log(`Congratulations, ${name}!`);
 };
+
+checkEvenNumber();
 
 export default checkEvenNumber;
