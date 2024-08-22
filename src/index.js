@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const getRandomNum = () => {
-  let num = 0;
-  num = Math.floor(Math.random() * 100);
-  return num;
-};
+export const getRandomNum = (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const getQuestion = (type) => {
   if (type === 'evenGame') {
@@ -13,6 +9,8 @@ export const getQuestion = (type) => {
     console.log('What is the result of the expression?');
   } else if (type === 'gcdGame') {
     console.log('Find the greatest common divisor of given numbers.');
+  } else if (type === 'progressionGame') {
+    console.log('What number is missing in the progression?');
   }
 };
 
@@ -26,6 +24,9 @@ export const getAnswer = (num, type, ...arg) => {
     console.log(`Your answer: ${answer}`);
   } else if (type === 'gcdGame') {
     answer = readlineSync.question(`Question: ${num} ${arg[0]} `);
+    console.log(`Your answer: ${answer}`);
+  } else if (type === 'progressionGame') {
+    answer = readlineSync.question(`Question: ${num} `);
     console.log(`Your answer: ${answer}`);
   }
   return answer;
