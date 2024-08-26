@@ -11,6 +11,8 @@ export const getQuestion = (type) => {
     console.log('Find the greatest common divisor of given numbers.');
   } else if (type === 'progressionGame') {
     console.log('What number is missing in the progression?');
+  } else if (type === 'primeGame') {
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   }
 };
 
@@ -28,12 +30,15 @@ export const getAnswer = (num, type, ...arg) => {
   } else if (type === 'progressionGame') {
     answer = readlineSync.question(`Question: ${num} `);
     console.log(`Your answer: ${answer}`);
+  } else if (type === 'primeGame') {
+    answer = readlineSync.question(`Question: ${num} `);
+    console.log(`Your answer: ${answer}`);
   }
   return answer;
 };
 
 export const compareResult = (answer, result, name) => {
-  if (+answer === +result) {
+  if (answer === result) {
     console.log('Correct!');
     return true;
   }
