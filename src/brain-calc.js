@@ -12,11 +12,11 @@ const getRandomSign = () => {
 const checkResult = (num1, num2, sign) => {
   let result;
   if (sign === '+') {
-    result = +num1 + +num2;
+    result = num1 + num2;
   } else if (sign === '-') {
-    result = +num1 - +num2;
+    result = num1 - num2;
   } else if (sign === '*') {
-    result = +num1 * +num2;
+    result = num1 * num2;
   }
 
   return result;
@@ -28,9 +28,9 @@ export default () => {
     const num = getRandomNum();
     const num2 = getRandomNum();
     const sign = getRandomSign();
-    const answer = +getAnswer(num, 'calcGame', sign, num2);
-    const result = +checkResult(num, num2, sign);
-    if (compareResult(answer, result, name) === false) {
+    const answer = getAnswer(num, 'calcGame', sign, num2);
+    const result = checkResult(num, num2, sign);
+    if (compareResult(answer, result.toString(), name) === false) {
       return null;
     }
   }
