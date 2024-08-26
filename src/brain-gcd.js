@@ -3,7 +3,9 @@ import { getRandomNum, getAnswer, getQuestion, compareResult } from './index.js'
 
 const name = askName();
 
-const gcdFind = (num, num2) => num2 === 0 ? num : gcdFind(num, num % num2);
+const gcdFind = (num, num2) => {
+  return num2 === 0 ? num : gcdFind(num2, num % num2);
+}
 
 export default () => {
   getQuestion('gcdGame');
