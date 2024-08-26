@@ -38,7 +38,7 @@ export const getAnswer = (num, type, ...arg) => {
 };
 
 export const compareResult = (answer, result, name) => {
-  if (answer === result) {
+  if (answer === result.toString()) {
     console.log('Correct!');
     return true;
   }
