@@ -4,7 +4,7 @@ import { getRandomNum, getAnswer, getQuestion, compareResult } from './index.js'
 const name = askName();
 
 const checkPrime = (num) => {
-  if (num > 2 || (num % 2 === 0 && num !== 2)) {
+  if (num > 2 || (num % 2 === 0 && num !== 2) || (num % 3 === 0 && num !== 3)) {
     return 'no';
   }
   return 'yes';
