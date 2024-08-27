@@ -4,8 +4,14 @@ import { getRandomNum, getAnswer, getQuestion, compareResult } from './index.js'
 const name = askName();
 
 const checkPrime = (num) => {
-  if (num > 2 || (num % 2 === 0 && num !== 2) || (num % 3 === 0 && num !== 3)) {
+  if (num > 2) {
     return 'no';
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return ' no';
+    }
   }
   return 'yes';
 };
