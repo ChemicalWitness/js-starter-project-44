@@ -1,5 +1,5 @@
 import askName from './cli.js';
-import { getRandomNum, getAnswer, getQuestion, compareResult } from './index.js';
+import { getAnswer, getQuestion, compareResult } from './index.js';
 
 const name = askName();
 

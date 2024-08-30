@@ -1,9 +1,11 @@
 import askName from './cli.js';
-import { getRandomNum, getAnswer, getQuestion, compareResult } from './index.js';
+import {
+  getRandomNum, getAnswer, getQuestion, compareResult,
+} from './index.js';
 
 const name = askName();
 
-const gcdFind = (num, num2) => {
+function gcdFind(num, num2) {
   return num2 === 0 ? num : gcdFind(num2, num % num2);
 }
 

@@ -1,5 +1,7 @@
 import askName from './cli.js';
-import { getRandomNum, getAnswer, getQuestion, compareResult } from './index.js';
+import {
+  getRandomNum, getAnswer, getQuestion, compareResult,
+} from './index.js';
 
 const name = askName();
 
@@ -26,7 +28,7 @@ export default () => {
     const answer = getAnswer(progressionArray.join(' '), 'progressionGame');
     if (compareResult(answer, result.toString(), name) === false) {
       return null;
-    };
+    }
   }
   return console.log(`Congratulations, ${name}!`);
-}
+};
