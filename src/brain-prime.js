@@ -1,5 +1,7 @@
 import askName from './cli.js';
-import { getAnswer, getQuestion, compareResult } from './index.js';
+import {
+  getAnswer, getQuestion, compareResult, getRandomNum,
+} from './index.js';
 
 const name = askName();
 
@@ -19,7 +21,7 @@ const checkPrime = (num) => {
 export default () => {
   getQuestion('primeGame');
   for (let i = 0; i < 3; i += 1) {
-    const num = 71;
+    const num = getRandomNum();
     const answer = getAnswer(num, 'progressionGame');
     const result = checkPrime(num);
     if (compareResult(answer, result, name) === false) {
