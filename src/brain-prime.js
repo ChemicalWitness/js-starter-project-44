@@ -1,10 +1,7 @@
-// import askName from './cli.js';
 import {
   getRandomNum,
   gameEngine,
 } from './index.js';
-
-// const name = askName();
 
 const game = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -26,21 +23,8 @@ const getQuestionAndAnswer = () => {
   const answer = checkPrime(question);
 
   return [question, answer];
-}
+};
 
 export default () => {
   gameEngine(game, getQuestionAndAnswer);
-}
-
-// export default () => {
-//   getQuestion('primeGame');
-//   for (let i = 0; i < 3; i += 1) {
-//     const num = getRandomNum();
-//     const answer = getAnswer(num, 'progressionGame');
-//     const result = checkPrime(num);
-//     if (compareResult(answer, result, name) === false) {
-//       return null;
-//     }
-//   }
-//   return console.log(`Congratulations, ${name}!`);
-// };
+};

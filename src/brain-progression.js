@@ -1,10 +1,8 @@
-// import askName from './cli.js';
 import {
   getRandomNum,
   gameEngine,
 } from './index.js';
 
-// const name = askName();
 const game = 'What number is missing in the progression?';
 
 const getProgression = (length, step, start) => {
@@ -27,27 +25,8 @@ const getQuestionAndAnswer = () => {
   const question = progressionArray.join(' ');
 
   return [question, answer];
-}
+};
 
 export default () => {
   gameEngine(game, getQuestionAndAnswer);
 };
-
-// export default () => {
-//   getQuestion('progressionGame');
-//   for (let i = 0; i < 3; i += 1) {
-//     const progressionLength = getRandomNum(5, 15);
-//     const progressionIndex = getRandomNum(0, progressionLength - 1);
-//     const progressionStep = getRandomNum(1, 5);
-//     const progressionStart = getRandomNum();
-//     const progressionArray = getProgression(progressionLength, progressionStep, progressionStart);
-//     const result = progressionArray[progressionIndex];
-//     progressionArray[progressionIndex] = '..';
-
-//     const answer = getAnswer(progressionArray.join(' '), 'progressionGame');
-//     if (compareResult(answer, result.toString(), name) === false) {
-//       return null;
-//     }
-//   }
-//   return console.log(`Congratulations, ${name}!`);
-// };
