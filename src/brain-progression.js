@@ -24,7 +24,7 @@ const getQuestionAndAnswer = () => {
   const progressionArray = getProgression(progressionLength, progressionStep, progressionStart);
   const answer = progressionArray[progressionIndex];
   progressionArray[progressionIndex] = '..';
-  const question = progressionArray;
+  const question = progressionArray.join(' ');
 
   return [question, answer];
 }
