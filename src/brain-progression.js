@@ -1,9 +1,11 @@
-import askName from './cli.js';
+// import askName from './cli.js';
 import {
-  getRandomNum, getAnswer, getQuestion, compareResult,
+  getRandomNum,
+  gameEngine,
 } from './index.js';
 
-const name = askName();
+// const name = askName();
+const game = 'What number is missing in the progression?';
 
 const getProgression = (length, step, start) => {
   const progressionArray = [];
@@ -14,21 +16,38 @@ const getProgression = (length, step, start) => {
   return progressionArray;
 };
 
-export default () => {
-  getQuestion('progressionGame');
-  for (let i = 0; i < 3; i += 1) {
-    const progressionLength = getRandomNum(5, 15);
-    const progressionIndex = getRandomNum(0, progressionLength - 1);
-    const progressionStep = getRandomNum(1, 5);
-    const progressionStart = getRandomNum();
-    const progressionArray = getProgression(progressionLength, progressionStep, progressionStart);
-    const result = progressionArray[progressionIndex];
-    progressionArray[progressionIndex] = '..';
+const getQuestionAndAnswer = () => {
+  const progressionLength = getRandomNum(5, 15);
+  const progressionIndex = getRandomNum(0, progressionLength - 1);
+  const progressionStep = getRandomNum(1, 5);
+  const progressionStart = getRandomNum();
+  const progressionArray = getProgression(progressionLength, progressionStep, progressionStart);
+  const answer = progressionArray[progressionIndex];
+  progressionArray[progressionIndex] = '..';
+  const question = progressionArray;
 
-    const answer = getAnswer(progressionArray.join(' '), 'progressionGame');
-    if (compareResult(answer, result.toString(), name) === false) {
-      return null;
-    }
-  }
-  return console.log(`Congratulations, ${name}!`);
+  return [question, answer];
+}
+
+export default () => {
+  gameEngine(game, getQuestionAndAnswer);
 };
+
+// export default () => {
+//   getQuestion('progressionGame');
+//   for (let i = 0; i < 3; i += 1) {
+//     const progressionLength = getRandomNum(5, 15);
+//     const progressionIndex = getRandomNum(0, progressionLength - 1);
+//     const progressionStep = getRandomNum(1, 5);
+//     const progressionStart = getRandomNum();
+//     const progressionArray = getProgression(progressionLength, progressionStep, progressionStart);
+//     const result = progressionArray[progressionIndex];
+//     progressionArray[progressionIndex] = '..';
+
+//     const answer = getAnswer(progressionArray.join(' '), 'progressionGame');
+//     if (compareResult(answer, result.toString(), name) === false) {
+//       return null;
+//     }
+//   }
+//   return console.log(`Congratulations, ${name}!`);
+// };
