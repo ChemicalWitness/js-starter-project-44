@@ -1,11 +1,7 @@
 import readlineSync from 'readline-sync';
 import askName from './cli.js';
 
-export function getRandomNum(min = 0, max = 100) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-export const gameEngine = (game, getQuestionAndAnswer) => {
+export default (game, getQuestionAndAnswer) => {
   const name = askName();
   console.log(game);
   const roundCount = 3;
