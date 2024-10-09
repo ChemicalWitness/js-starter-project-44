@@ -1,3 +1,7 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/ChemicalWitness/js-starter-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ChemicalWitness/js-starter-project-44/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3240ca2a6049fe537a74/maintainability)](https://codeclimate.com/github/ChemicalWitness/js-starter-project-44/maintainability)
+
 # js-starter-project-44
 ## Brain-Games a simple command line game.
 
@@ -41,7 +45,3 @@ Asciinema for running brain-gcd game: [![asciicast](https://asciinema.org/a/Vodd
 Asciinema for running brain-progression game: [![asciicast](https://asciinema.org/a/iRDBn9r6eneFKxUPfLFGorNxs.svg)](https://asciinema.org/a/iRDBn9r6eneFKxUPfLFGorNxs)
 ##### brain-prime
 Asciinema for running brain-prime game: [![asciicast](https://asciinema.org/a/QYBzAMkrTZg6rtFjNBjApm9LG.svg)](https://asciinema.org/a/QYBzAMkrTZg6rtFjNBjApm9LG)
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/ChemicalWitness/js-starter-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ChemicalWitness/js-starter-project-44/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/3240ca2a6049fe537a74/maintainability)](https://codeclimate.com/github/ChemicalWitness/js-starter-project-44/maintainability)
