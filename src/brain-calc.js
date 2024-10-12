@@ -10,22 +10,16 @@ const getRandomSign = () => {
 };
 
 const getResult = (num1, num2, sign) => {
-  let result;
   switch (sign) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
-      console.log('Error');
+      return console.log('Error');
   }
-
-  return result.toString();
 };
 
 const getQuestionAndAnswer = () => {
